@@ -1,0 +1,8 @@
+<% if flash.any? %>
+  <% flash.each do |key, value| %>
+    <% flash_class = flash_class(key) %>
+    <script type="text/javascript">
+      notify("<b><small><%= value %></small></b>", "<%= flash_class.to_s %>");
+    </script>
+  <% end %>
+<% end %>

@@ -37,14 +37,8 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.4)
     ast (2.4.0)
-    autoprefixer-rails (8.6.2)
-      execjs
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootstrap (4.1.1)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
     concurrent-ruby (1.0.5)
@@ -79,7 +73,6 @@ GEM
     parallel (1.12.1)
     parser (2.5.1.0)
       ast (~> 2.4.0)
-    popper_js (1.12.9)
     powerpack (0.1.2)
     rack (1.6.10)
     rack-test (0.6.3)
@@ -188,7 +181,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap
   byebug
   database_cleaner
   jquery-rails
