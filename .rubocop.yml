@@ -1,0 +1,31 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.5.1
+  TargetRailsVersion: 4.2
+  DisplayCopNames: true
+  Exclude:
+    - 'db/*'
+    - 'bin/*'
+    - 'vendor/**/*'
+Rails:
+  Enabled: true
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+Rails/HttpPositionalArguments:
+  Enabled: false
+Rails/NotNullColumn:
+  Enabled: false
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+RSpec/ExampleLength:
+  Enabled: false
