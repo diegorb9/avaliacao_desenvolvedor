@@ -11,6 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180617032146) do
+
+  create_table "sales", force: :cascade do |t|
+    t.string   "customer"
+    t.string   "description"
+    t.decimal  "unit_value",  default: 0.0
+    t.integer  "quantity",    default: 0
+    t.decimal  "total",       default: 0.0
+    t.string   "address"
+    t.string   "provider"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
 end
