@@ -208,11 +208,17 @@ pt-BR:
       <<: *errors
   activerecord:
     models:
-      user: Usuário
+      sale: Venda
 
     attributes:
-      user:
-        name: Nome
+      sale:
+        customer: Comprador
+        description: Descrição
+        unit_value: Preço Unitário
+        quantity: Quantidade
+        address: Endereço
+        provider: Fornecedor
+        total: Total
 
     errors:
       <<: *errors

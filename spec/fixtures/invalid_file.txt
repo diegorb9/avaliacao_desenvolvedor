@@ -1,0 +1,2 @@
+Comprador	Descrição	Preço Unitário	Quantidade	Endereço	Fornecedor
+João Silva	R$10 off R$20 of food	10.0	0	987 Fake St	Bob's Pizza

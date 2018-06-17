@@ -9,9 +9,6 @@ abort('The Rails environment is running in production mode!') if Rails
 
 require 'spec_helper'
 require 'rspec/rails'
-require 'webmock/rspec'
-
-WebMock.allow_net_connect!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
