@@ -1,0 +1,24 @@
+<% if import[:status] == 'success' %>
+  <div class="alert alert-success">
+    Importação finalizada com sucesso!</br>
+    Registros: <%= import[:lines] %></br>
+    Total: <%= number_to_currency(import[:total]) %>
+  </div>
+<% else %>
+  <div class="alert alert-danger">
+    Não foi possível importar os registros.</br>
+    Registros: <%= import[:lines] %></br>
+    <hr>
+    <div class="small">
+      Todos os campos são obrigatórios</br>
+      Campos númericos devem ser maior que 0
+    </div>
+  </div>
+<% end %>
+<hr>
+<div class="text-right">
+  <button type="button" class="btn btn-default btn-sm btn-fill" data-dismiss="modal">Cancelar</button>
+  <button class='btn btn-primary btn-sm btn-fill import_button'
+    type="button" name="import">Importar novo arquivo
+  </button>
+</div>

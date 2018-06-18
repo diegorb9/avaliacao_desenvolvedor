@@ -1,0 +1,34 @@
+<table class='table table-striped small'>
+  <thead>
+    <tr>
+      <th>Dt. Importação</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Endereço</th>
+      <th>Fornecedor</th>
+      <th>Preço Unit.</th>
+      <th>Quantidade</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @sales.any? %>
+      <% @sales.each do |sale| %>
+        <tr>
+          <td><%= sale.created_at.strftime("%d/%m/%Y") %></td>
+          <td><%= sale.customer %></td>
+          <td><%= sale.description %></td>
+          <td><%= sale.address %></td>
+          <td><%= sale.provider %></td>
+          <td><%= number_to_currency(sale.unit_value) %></td>
+          <td><%= sale.quantity %></td>
+          <td><%= number_to_currency(sale.total) %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan=8>Sem resultados para a pesquisa.</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

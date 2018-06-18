@@ -1,0 +1,4 @@
+$("#import").html("<%= j render(partial: 'import/status', locals: { import: @import }) %>");
+<% if @import[:status] == 'success' %>
+  $.get('/sales?format=js');
+<% end %>

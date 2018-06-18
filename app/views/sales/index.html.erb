@@ -1,0 +1,27 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <button class='btn btn-primary btn-sm btn-fill import_button'
+      type="button" name="import">Importar arquivo
+    </button>
+    <hr>
+    <div class='card'>
+      <div class='content table-responsive table-full-width'>
+        <div id='list'>
+          <%= render 'list' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/modal' %>
+
+<%= content_for :footer_js do %>
+  <script type="text/javascript">
+    $(document).on('click', '.import_button', function(e){
+      $('#Modal').modal('show');
+      $('#Modal .modal-title').html("Importar arquivo");
+      $('.modal-body').html("<%= j render partial: 'import/form' %>");
+    });
+  </script>
+<% end %>

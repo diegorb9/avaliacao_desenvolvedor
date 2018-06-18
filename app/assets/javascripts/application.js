@@ -3,6 +3,7 @@
 //= require bootstrap.min
 //= require bootstrap-notify
 //= require paper-dashboard
+//= require jquery.remotipart
 
 function notify(message, type){
   $.notify({
