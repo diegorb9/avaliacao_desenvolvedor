@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 # frozen_literal_string: true
 
 require 'rails_helper'
 
 RSpec.describe Sale, type: :model do
-  it { should validate_presence_of(:customer) }
-  it { should validate_presence_of(:description) }
-  it { should validate_presence_of(:address) }
-  it { should validate_presence_of(:provider) }
-  it { should validate_numericality_of(:unit_value) }
-  it { should validate_numericality_of(:quantity) }
+  it { is_expected.to validate_presence_of(:customer) }
+  it { is_expected.to validate_presence_of(:description) }
+  it { is_expected.to validate_presence_of(:address) }
+  it { is_expected.to validate_presence_of(:provider) }
+  it { is_expected.to validate_numericality_of(:unit_value) }
+  it { is_expected.to validate_numericality_of(:quantity) }
 end
