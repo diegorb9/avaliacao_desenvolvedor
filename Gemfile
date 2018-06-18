@@ -21,13 +21,14 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'rubocop-rspec'
 end
 
 group :test do
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
   gem 'simplecov', require: false
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'timecop'
 end
