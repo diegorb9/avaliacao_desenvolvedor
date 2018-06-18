@@ -19,7 +19,6 @@ module Sales
         rows.each { |row| Sales::Creator.save(row) }
       rescue ActiveRecord::RecordInvalid
         response[:status] = 'fault'
-        response[:error] = default_message
       end
 
       response
@@ -28,19 +27,23 @@ module Sales
     private
 
     def rows
-      @rows ||= CSV.parse(file.read, headers: true, col_sep: "\t")
-    end
-
-    def default_message
-      "Todos os campos são obrigatórios\n" \
-      'Campos númericos devem ser maior que 0'
+      @rows ||= CSV.parse(
+        file.read.force_encoding('UTF-8'),
+        headers: true,
+        col_sep: "\t"
+      )
     end
 
     def response
       @response ||= {
         status: 'success',
-        lines: rows.length
+        lines: rows.length,
+        total: total
       }
+    end
+
+    def total
+      rows.sum { |r| r['Quantidade'].to_i * r['Preço Unitário'].to_f }
     end
   end
 end

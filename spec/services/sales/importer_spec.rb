@@ -9,7 +9,7 @@ RSpec.describe Sales::Importer, type: :service do
     let(:file) { File.open("#{fixture_path}/valid_file.txt") }
 
     it 'returns import response' do
-      expect(importer).to eql(lines: 4, status: 'success')
+      expect(importer).to eql(lines: 4, status: 'success', total: 70.0)
     end
 
     it 'creates the records' do
@@ -21,12 +21,9 @@ RSpec.describe Sales::Importer, type: :service do
 
   context 'when failed' do
     let(:file) { File.open("#{fixture_path}/invalid_file.txt") }
-    let(:error_message) do
-      "Todos os campos são obrigatórios\nCampos númericos devem ser maior que 0"
-    end
 
     it 'returns import response' do
-      expect(importer).to eql(lines: 1, status: 'fault', error: error_message)
+      expect(importer).to eql(lines: 1, status: 'fault', total: 0.0)
     end
 
     it 'does not create the records' do
