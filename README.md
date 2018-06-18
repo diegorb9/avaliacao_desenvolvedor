@@ -21,7 +21,7 @@ $ rake db:create RAILS_ENV=test
 $ rake db:migrate RAILS_ENV=test
 $ rspec -fd
 
-# Após rodar os testes automatizados é possível verificação o percentual de
+# Após rodar os testes automatizados é possível verificar o percentual de
 # cobertura dos testes no arquivo 'coverage/index.html'
 # Referência: https://github.com/colszowka/simplecov
 ```
